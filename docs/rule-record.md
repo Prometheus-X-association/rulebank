@@ -9,20 +9,20 @@ Fields of a rule record. The schema is [schema/rule-record.schema.json](../schem
 | `statement` | One sentence, one obligation, per language | Requirement |
 | `strength` | `MUST`, `SHOULD`, `MAY` | Requirement |
 | `deonticType` | `obligation`, `prohibition`, `permission` | Type |
-| `accountable`, `executor` | DSSC core roles: governance authority, data provider, data user, service provider | Role it binds |
+| `accountable`, `executor` | DSSC roles: governance authority, data provider, data user, service provider, operator, intermediary, participant | Role it binds |
 | `level` | 0 to 3 | Level |
 | `parameters` | See below | Level |
-| `pattern` | Generic rule pattern: purpose limitation, release threshold, local processing, anonymisation, credential, retention, publication, logging, contract, process | Not in DSSC |
+| `pattern` | Generic rule pattern: purpose limitation, release threshold, local processing, anonymisation, credential, retention, publication, logging, contract, process, governance (what the rulebook itself must state) | Not in DSSC |
 | `parent` | Parent rule and the baseline version it conforms to. `null` at level 0 | Parent rule (field 15) |
 | `buildingBlock` | One or two Blueprint 4.0 building blocks | Building block |
-| `enforcementClass` | E0 to E3 | Enforcement class |
-| `assuranceLevel` | L1 to L3 | Assurance level |
+| `enforcementClass` | E0 to E3, the minimum the rule requires. A lower level may raise it, never lower it. When the rule can bite in several ways, each expression carries its own class | Enforcement class |
+| `assuranceLevel` | L1 to L3, the minimum the rule requires, same logic | Assurance level |
 | `control` | Who checks what, when | Control |
 | `evidence` | Execution records and who may see them | Evidence |
 | `trustFramework` | Scheme, version, accepted issuers, or `none` | Trust framework reference |
 | `expressions` | See below | Machine-readable expression |
 | `source` | Documents the rule comes from | Source |
-| `decisionStatus` | `agreed`, `provisional`, `candidate` | Status |
+| `decisionStatus` | `agreed`, `provisional`, `candidate`, `example`, as in the DSSC register | Status |
 
 Implementation status is not in the record. It goes in a validation record, one per data space and rule, as in the DSSC register.
 

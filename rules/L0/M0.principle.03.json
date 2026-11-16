@@ -1,0 +1,30 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M0.principle.03",
+  "version": "0.1",
+  "title": "The rules are public and versioned",
+  "statement": {
+    "en": "The rulebook shall be published and versioned, with a change log."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Organisational form and governance authority"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "Each published version has a version identifier and a change log entry",
+  "evidence": [
+    {"type": "published-version", "visibleTo": ["public"]},
+    {"type": "change-log", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {"type": "not-yet-specified", "note": "Rulebook version identifier in the data space self-description."}
+  ],
+  "source": ["DSSC plenary 28 September 2026", "DSSC decision log D-06", "DSSC rule record register v0.1"],
+  "decisionStatus": "agreed"
+}

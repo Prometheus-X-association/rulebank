@@ -1,0 +1,38 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M1.participation.01",
+  "version": "0.1",
+  "title": "Validation of participants at onboarding and during the lifecycle",
+  "statement": {
+    "en": "The governance authority shall define validation criteria for each type of participant claim, including the onboarding of a participant into a role, shall record for each check how it was performed and by whom, and shall re-validate participants during their lifecycle at the interval set at Level 1. Execution of the checks may be delegated to a trusted third party named in the rulebook."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "credential",
+  "parameters": [
+    {"name": "revalidationInterval", "datatype": "duration", "case": "open", "setAt": 1, "stricter": "lower"}
+  ],
+  "parent": null,
+  "buildingBlock": ["Participation management", "Trust framework"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "The onboarding record is complete for each admitted participant and is reviewed at admission and at each re-validation",
+  "evidence": [
+    {"type": "onboarding-record", "visibleTo": ["governance-authority"]},
+    {"type": "revalidation-log", "visibleTo": ["governance-authority"]}
+  ],
+  "trustFramework": "The data space trust framework defines the claim types and accepted trust anchors (EN 18235-2 annex A.3.3)",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Checks performed by people."},
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "Participant credential carrying the validated claims, where claims are issued and verified as credentials."
+    }
+  ],
+  "source": ["EN 18235-2 (under vote) 5.2.6.2", "proto-EMDS Onboarding Policy", "DS4Skills rulebook v0.4 GOV-01, TRUST-02", "DSSC rule record register v0.1"],
+  "decisionStatus": "example"
+}

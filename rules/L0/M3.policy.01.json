@@ -1,0 +1,37 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M3.policy.01",
+  "version": "0.1",
+  "title": "Machine-readable usage conditions",
+  "statement": {
+    "en": "A data provider shall attach to each data product a machine-readable usage policy, in the policy vocabulary named at Level 1, that expresses at least the permitted purpose, onward sharing, retention, AI training permission and revocation, and names the point at which it is enforced. A data user's agent shall evaluate the policy before access and shall record the decision."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:data-provider"],
+  "executor": ["role:data-provider", "role:data-user"],
+  "level": 0,
+  "pattern": "publication",
+  "parameters": [
+    {"name": "policyProfile", "datatype": "iri", "case": "open", "setAt": 1}
+  ],
+  "parent": null,
+  "buildingBlock": ["Data sharing contract", "Data product description"],
+  "enforcementClass": "E2",
+  "assuranceLevel": "L2",
+  "control": "Validation of the policy against the Level 1 profile at publication; the access decision log shows the policy was evaluated",
+  "evidence": [
+    {"type": "policy-attached-to-catalogue-entry", "visibleTo": ["participants"]},
+    {"type": "access-decision-log", "visibleTo": ["parties", "governance-authority"]}
+  ],
+  "trustFramework": "The data user's claims evaluated by the policy are issued under the data space trust framework",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "ODRL policy under the Level 1 profile; SHACL shape checking that the policy is attached. Terms that cannot be enforced technically are marked E1 in the policy."
+    }
+  ],
+  "source": ["DS4Skills rulebook v0.4 POL-01 to POL-12", "EN 18235-3 (draft)", "proto-EMDS Data Sharing Policy", "DSSC decision log D-13 (to be merged with M3.policy.02)", "DSSC rule record register v0.1"],
+  "decisionStatus": "example"
+}

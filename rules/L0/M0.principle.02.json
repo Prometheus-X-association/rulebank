@@ -1,0 +1,30 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M0.principle.02",
+  "version": "0.1",
+  "title": "Participation is fair, transparent and under explicit criteria",
+  "statement": {
+    "en": "Every rulebook shall state its participation criteria and shall apply them transparently and without discrimination."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Participation management"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "Published criteria compared with the admission records",
+  "evidence": [
+    {"type": "published-criteria", "visibleTo": ["public"]},
+    {"type": "admission-record", "visibleTo": ["governance-authority", "participant"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {"type": "none"}
+  ],
+  "source": ["DSSC plenary 28 September 2026", "DSSC decision log D-05", "DSSC rule record register v0.1"],
+  "decisionStatus": "agreed"
+}

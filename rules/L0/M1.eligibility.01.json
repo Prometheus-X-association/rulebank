@@ -1,0 +1,34 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M1.eligibility.01",
+  "version": "0.1",
+  "title": "Eligibility conditions and minimum onboarding checks",
+  "statement": {
+    "en": "The rulebook shall define its eligibility conditions and the minimum information checked at onboarding per role; the scope (geographic, organisational) is set at Level 1."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Participation management", "Trust framework"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "Onboarding record reviewed at admission",
+  "evidence": [
+    {"type": "onboarding-record", "visibleTo": ["governance-authority", "participant"]}
+  ],
+  "trustFramework": "dssc:M1.trust.01",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Checks performed by people at onboarding."},
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "Participant credential, where claims are issued and verified as credentials."
+    }
+  ],
+  "source": ["DSSC plenary 28 September 2026", "DS4Skills homework 2", "DSSC decision log D-11", "DSSC rule record register v0.1"],
+  "decisionStatus": "agreed"
+}

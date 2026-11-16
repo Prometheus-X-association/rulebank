@@ -1,0 +1,40 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M1.conformance.01",
+  "version": "0.1",
+  "title": "Conformance of the data space rulebook to the common interoperability baseline",
+  "statement": {
+    "en": "The governance authority shall publish its rulebook in machine-readable form, at the endpoint defined at Level 0 where one is defined, and every rule that implements a Level 0 rule shall declare it as its parent rule and shall include at least the Level 0 minimum fields and values; Level 2 and Level 3 rules shall conform to their parent rule in the same way."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Organisational form and governance authority", "Data space offerings"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "At every rulebook release and whenever the Level 0 baseline changes: a validator checks that each rule declaring a Level 0 parent contains its minimum fields and values, then a reviewer checks that local additions do not weaken the parent. A failed check blocks the release from being listed as conformant",
+  "evidence": [
+    {"type": "machine-readable-rulebook", "visibleTo": ["public"]},
+    {"type": "conformance-report", "visibleTo": ["participants", "other-data-spaces"]},
+    {"type": "review-record", "visibleTo": ["governance-authority", "reviewer"]}
+  ],
+  "trustFramework": "Decided rule by rule: the checked rule follows the trust framework of its parent rule",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "Validator on the machine-readable rulebook: parent rules resolve, Level 0 fields and values present, parameters only made stricter. The validator of this bank does part of it."
+    },
+    {
+      "type": "none",
+      "enforcementClass": "E1",
+      "note": "Reviewer confirms that local rules only add to their parent rule."
+    }
+  ],
+  "source": ["DS4Skills rulebook v0.4 GOV-01, POL-04, POL-13", "DS4Skills homework 3, October 2026", "DSSC decision log D-26", "DSSC rule record register v0.1"],
+  "decisionStatus": "candidate"
+}

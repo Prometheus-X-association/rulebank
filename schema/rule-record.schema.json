@@ -30,7 +30,7 @@
     "pattern": {
       "enum": [
         "purpose-limitation", "release-threshold", "local-processing", "anonymisation",
-        "credential", "retention", "publication", "logging", "contract", "process"
+        "credential", "retention", "publication", "logging", "contract", "process", "governance"
       ]
     },
     "parameters": {"type": "array", "items": {"$ref": "#/$defs/parameter"}},
@@ -68,7 +68,7 @@
     "trustFramework": {"type": "string"},
     "expressions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/expression"}},
     "source": {"type": "array", "minItems": 1, "items": {"type": "string"}},
-    "decisionStatus": {"enum": ["agreed", "provisional", "candidate"]}
+    "decisionStatus": {"enum": ["agreed", "provisional", "candidate", "example"]}
   },
   "allOf": [
     {
@@ -85,7 +85,10 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "enum": ["role:governance-authority", "role:data-provider", "role:data-user", "role:service-provider"]
+        "enum": [
+          "role:governance-authority", "role:data-provider", "role:data-user", "role:service-provider",
+          "role:operator", "role:intermediary", "role:participant"
+        ]
       }
     },
     "enforcementClass": {"enum": ["E0", "E1", "E2", "E3"]},

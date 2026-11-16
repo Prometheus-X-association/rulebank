@@ -1,0 +1,29 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M3.datamodel.01",
+  "version": "0.1",
+  "title": "Semantic models named",
+  "statement": {
+    "en": "The rulebook shall name the semantic models, ontologies, code lists and versions used behind its data products, or who maintains them; it does not impose a domain model."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority", "role:data-provider"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Data model description", "Data product description"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "Model references present in the rulebook and in catalogue entries",
+  "evidence": [
+    {"type": "published-model-references", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {"type": "not-yet-specified", "note": "Model and version identifiers in catalogue entries."}
+  ],
+  "source": ["DSSC plenary 12 October 2026", "DSSC decision log D-19", "DSSC rule record register v0.1"],
+  "decisionStatus": "agreed"
+}

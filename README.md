@@ -4,23 +4,44 @@ Machine-readable rules for the Prometheus-X data spaces.
 
 Every rule of the common rulebook is stored here as a record with the same fields, whatever its level. Each record says how the rule is checked, and each building block reads the part it understands: the catalogue reads validation shapes, the contract manager and the connector read ODRL, the Edge Node Server reads release gates, and audit reads the list of evidence.
 
-> **Status: first R&D version.** Level 0 only. All rules are candidates and parameter values are illustrative. The record follows the fields of the DSSC rule record, with a few additions for parameters and expressions.
+> **Status: first R&D version.** Level 0 only. Parameter values are illustrative. The record follows the fields of the DSSC rule record, with a few additions for parameters and expressions.
 
 ## Level 0 rules
 
 Level 0 holds the rules common to all data spaces. Some are fixed, others are generic patterns whose parameters are set by each data space (L1), use case type (L2) or contract (L3).
 
 <!-- status:start -->
-| Rule | Title | Class | Expression | Status |
-| --- | --- | --- | --- | --- |
-| [`ptx:rule/L0-AI-LITERACY`](rules/L0/L0-AI-LITERACY.json) | AI literacy of staff | E1 | none | checked by people |
-| [`ptx:rule/L0-CONTRACTED-EXCHANGE`](rules/L0/L0-CONTRACTED-EXCHANGE.json) | No exchange without a contract | E2 | not-yet-specified | remains to do |
-| [`ptx:rule/L0-PURPOSE-LIMITATION`](rules/L0/L0-PURPOSE-LIMITATION.json) | Use limited to the contracted purposes | E2 | odrl-template | expressed |
-| [`ptx:rule/L0-RELEASE-THRESHOLD`](rules/L0/L0-RELEASE-THRESHOLD.json) | Minimum group size for aggregated results | E3 | release-gate | expressed |
-| [`ptx:rule/L0-RETENTION`](rules/L0/L0-RETENTION.json) | Retention and deletion | E2 | odrl-template | expressed |
+| Rule | Title | Decision | Class | Expression | Expression status |
+| --- | --- | --- | --- | --- | --- |
+| [`dssc:M0.principle.01`](rules/L0/M0.principle.01.json) | Participants keep control over the use of their data | agreed | E1 | none | checked by people |
+| [`dssc:M0.principle.02`](rules/L0/M0.principle.02.json) | Participation is fair, transparent and under explicit criteria | agreed | E1 | none | checked by people |
+| [`dssc:M0.principle.03`](rules/L0/M0.principle.03.json) | The rules are public and versioned | agreed | E1 | not-yet-specified | remains to do |
+| [`dssc:M0.principle.04`](rules/L0/M0.principle.04.json) | Every rule names who it binds and how it is checked | agreed | E1 | not-yet-specified | remains to do |
+| [`dssc:M1.change.01`](rules/L0/M1.change.01.json) | Changing the rules | example | E1 | not-yet-specified | remains to do |
+| [`dssc:M1.conformance.01`](rules/L0/M1.conformance.01.json) | Conformance of the data space rulebook to the common interoperability baseline | candidate | E1 | none, not-yet-specified | partial |
+| [`dssc:M1.eligibility.01`](rules/L0/M1.eligibility.01.json) | Eligibility conditions and minimum onboarding checks | agreed | E1 | none, not-yet-specified | partial |
+| [`dssc:M1.participation.01`](rules/L0/M1.participation.01.json) | Validation of participants at onboarding and during the lifecycle | example | E1 | none, not-yet-specified | partial |
+| [`dssc:M1.roles.01`](rules/L0/M1.roles.01.json) | Core roles | agreed | E1 | not-yet-specified | remains to do |
+| [`dssc:M1.trust.01`](rules/L0/M1.trust.01.json) | Trust framework reference | provisional | E1 | not-yet-specified | remains to do |
+| [`dssc:M3.catalogue.01`](rules/L0/M3.catalogue.01.json) | Catalogue entry before offering | example | E2 | not-yet-specified | remains to do |
+| [`dssc:M3.datamodel.01`](rules/L0/M3.datamodel.01.json) | Semantic models named | agreed | E1 | not-yet-specified | remains to do |
+| [`dssc:M3.delegation.01`](rules/L0/M3.delegation.01.json) | Delegation evidence distinct from identity | provisional | E2 | not-yet-specified | remains to do |
+| [`dssc:M3.federation.01`](rules/L0/M3.federation.01.json) | Data space self-description and identifier | example | E2 | not-yet-specified | remains to do |
+| [`dssc:M3.policy.01`](rules/L0/M3.policy.01.json) | Machine-readable usage conditions | example | E2 | not-yet-specified | remains to do |
+| [`dssc:M3.trust.02`](rules/L0/M3.trust.02.json) | Trust anchors and issuers | provisional | E1 | not-yet-specified | remains to do |
+| [`dssc:M4.assurance.01`](rules/L0/M4.assurance.01.json) | Assurance attribute on every rule | agreed | E1 | not-yet-specified | remains to do |
+| [`dssc:M4.exit.02`](rules/L0/M4.exit.02.json) | Portability and exit at Level 0 | agreed | E1 | none, not-yet-specified | partial |
+| [`dssc:M4.incident.01`](rules/L0/M4.incident.01.json) | Incident and breach notification | example | E1 | none | checked by people |
+| [`dssc:M4.logging.01`](rules/L0/M4.logging.01.json) | Transaction record | example | E2 | not-yet-specified | remains to do |
+| [`dssc:M5.trust.06`](rules/L0/M5.trust.06.json) | Machine-verifiable claims | provisional | E1 | none, not-yet-specified | partial |
+| [`ptx:rule/L0-AI-LITERACY`](rules/L0/L0-AI-LITERACY.json) | AI literacy of staff | candidate | E1 | none | checked by people |
+| [`ptx:rule/L0-CONTRACTED-EXCHANGE`](rules/L0/L0-CONTRACTED-EXCHANGE.json) | No exchange without a contract | candidate | E2 | not-yet-specified | remains to do |
+| [`ptx:rule/L0-PURPOSE-LIMITATION`](rules/L0/L0-PURPOSE-LIMITATION.json) | Use limited to the contracted purposes | candidate | E2 | odrl-template | expressed |
+| [`ptx:rule/L0-RELEASE-THRESHOLD`](rules/L0/L0-RELEASE-THRESHOLD.json) | Minimum group size for aggregated results | candidate | E3 | release-gate | expressed |
+| [`ptx:rule/L0-RETENTION`](rules/L0/L0-RETENTION.json) | Retention and deletion | candidate | E2 | odrl-template | expressed |
 <!-- status:end -->
 
-Rules use a `ptx:rule/` identifier. When a rule is taken up in the register of the DSSC Rulebook Accelerator, it keeps the DSSC identifier (`dssc:` prefix).
+Rules with a `dssc:` identifier come from the rule record register v0.1 of the DSSC Rulebook Accelerator (23 October 2026). They keep the DSSC identifier, the DSSC wording and its decision status: agreed, provisional, candidate, or example (kept by DSSC as an illustration, assessed by two data spaces). Rules with a `ptx:rule/` identifier are Prometheus-X candidates, not yet in the DSSC register.
 
 "Expressed" means the artifact exists in this repository. It does not mean a building block enforces it today: enforcement is tracked per data space in validation records, which come next.
 
@@ -60,6 +81,8 @@ flowchart LR
 | E2 | Enforced or monitored by connector, catalogue, policy engine or logs |
 | E3 | Requires a protected compute environment, such as compute-to-data on the Edge Node Server |
 
+The class on the record is the minimum the rule requires, and a lower level may raise it, never lower it. When a rule can bite in more than one way, for example a manual check (E1) or a verified credential (E2), each expression carries its own class. What a data space actually practises goes in its validation record. Assurance levels work the same way.
+
 **The contract keeps the rule ID.** Every artifact carries `dsif:sourceRule`. When a policy is generated from a template, the link stays in the contract, so the connector and the Edge Node Server know which rule they enforce, and another data space can read the same rule.
 
 ## Repository layout
@@ -92,7 +115,8 @@ python scripts/rulebank.py status --write
 - **Profile terms.** `dsif:sourceRule` and `dsif:enforcementClass` come from the DSIF ODRL profile plan and are not published yet.
 - **Release gate format.** To align with the Edge Node Server: gate identifiers, check expression format, what the gate log contains.
 - **Checks built into the connector.** `L0-CONTRACTED-EXCHANGE` is enforced by the PTX connector by design. We still have to decide how a record points to a built-in check.
-- **More Level 0 rules.** Other rules are being placed with the DSSC Rulebook Accelerator. They enter the bank once their level is agreed.
+- **More Level 0 rules.** Not yet imported from the DSSC register: rules owned by a single data space and not yet discussed, records DSSC plans to merge (`M3.policy.02` into `M3.policy.01`, `M4.exit.01` into `M4.exit.02`, `M1.separation.01` and `.02`), and the provisional governance rows (intermediaries, contracts, standards, trust services, evidence visibility, claim recognition, re-validation).
+- **Overlaps with Prometheus-X rules.** `L0-RETENTION` and `L0-PURPOSE-LIMITATION` express parts of `dssc:M3.policy.01`. `L0-CONTRACTED-EXCHANGE` is close to `dssc:M4.logging.01`. To align when DSSC merges its policy records.
 
 ## Contributing
 

@@ -1,0 +1,32 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M1.trust.01",
+  "version": "0.1",
+  "title": "Trust framework reference",
+  "statement": {
+    "en": "The rulebook shall contain or reference one or more concrete trust frameworks, by claim type where needed, each identified by scheme, version and accepted issuers; the self-description shall publish the reference."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "credential",
+  "parameters": [
+    {"name": "trustFrameworks", "datatype": "list", "case": "open", "setAt": 1}
+  ],
+  "parent": null,
+  "buildingBlock": ["Trust framework"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "The self-description publishes the trust framework reference with scheme, version and accepted issuers",
+  "evidence": [
+    {"type": "self-description", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "This record defines the reference",
+  "expressions": [
+    {"type": "not-yet-specified", "note": "Entry in the data space self-description."}
+  ],
+  "source": ["EN 18235-3 (draft)", "DSSC plenary 19 October 2026", "DSSC decision log D-24", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}

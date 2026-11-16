@@ -1,0 +1,32 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M4.assurance.01",
+  "version": "0.1",
+  "title": "Assurance attribute on every rule",
+  "statement": {
+    "en": "Every rule shall state its checking method, the evidence it produces and its assurance level (L1, L2, L3); expectations are set by rule category and risk; an enforcement class of E2 does not by itself imply L2 or L3."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Trust framework", "Provenance and observability"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "The register is complete for every rule",
+  "evidence": [
+    {"type": "rule-register", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "note": "Met by the rule record itself: the schema of this bank requires control, evidence and assuranceLevel."
+    }
+  ],
+  "source": ["DSSC working session 22 October 2026", "DSSC decision log D-27", "DSSC rule record register v0.1"],
+  "decisionStatus": "agreed"
+}

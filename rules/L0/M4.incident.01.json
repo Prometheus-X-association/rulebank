@@ -1,0 +1,34 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M4.incident.01",
+  "version": "0.1",
+  "title": "Incident and breach notification",
+  "statement": {
+    "en": "A participant or operator that detects a security incident affecting shared data or data space services shall notify the operator and the affected participants without undue delay and at the latest within the period set at Level 1, shall record the incident and the remedial actions taken, and shall cooperate in the investigation. Where personal data are affected, the legal notification duties apply in addition."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:participant", "role:operator"],
+  "executor": ["role:participant", "role:operator"],
+  "level": 0,
+  "pattern": "process",
+  "parameters": [
+    {"name": "notificationPeriod", "datatype": "duration", "case": "open", "setAt": 1, "stricter": "lower"}
+  ],
+  "parent": null,
+  "buildingBlock": ["Provenance and observability", "Intermediaries and operators"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "Incident register exists and each entry shows notification time, recipients and remedial action",
+  "evidence": [
+    {"type": "incident-record", "visibleTo": ["affected-participants", "governance-authority"]},
+    {"type": "notification-log", "visibleTo": ["affected-participants", "governance-authority"]},
+    {"type": "post-incident-report", "visibleTo": ["affected-participants", "governance-authority"]}
+  ],
+  "trustFramework": "none; suspension of a participant following an incident is handled under the trust framework",
+  "expressions": [
+    {"type": "none", "note": "An incident ticket schema can be added where the data space operates a helpdesk."}
+  ],
+  "source": ["Sitra rulebook model, General Terms and Conditions", "proto-EMDS Execution, Observability and Accountability Policy", "DS4Skills rulebook v0.4 SLA-01 to SLA-12, OPS-02, OPS-03", "GDPR Article 33", "DSSC rule record register v0.1"],
+  "decisionStatus": "example"
+}

@@ -1,0 +1,37 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M4.logging.01",
+  "version": "0.1",
+  "title": "Transaction record",
+  "statement": {
+    "en": "Each participant agent shall record for every data transaction at least the identifiers of the parties, the data product, the contract or policy applied, the timestamp and the outcome, shall not record the payload, and shall retain the record for the period set at Level 1. Access to records shall be limited by role and purpose and shall itself be logged."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:data-provider", "role:data-user"],
+  "executor": ["role:data-provider", "role:data-user"],
+  "level": 0,
+  "pattern": "logging",
+  "parameters": [
+    {"name": "recordRetention", "datatype": "duration", "case": "open", "setAt": 1, "stricter": "higher"}
+  ],
+  "parent": null,
+  "buildingBlock": ["Provenance and observability"],
+  "enforcementClass": "E2",
+  "assuranceLevel": "L2",
+  "control": "Periodic sample check that records exist for transactions in the catalogue or contract register; access log reviewed on request",
+  "evidence": [
+    {"type": "transaction-record", "visibleTo": ["parties", "governance-authority"]},
+    {"type": "record-access-log", "visibleTo": ["parties", "governance-authority"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "Event record following the data space event schema (proto-EMDS: 17 event types, 9 mandatory fields). Written by the PTX connector by design."
+    }
+  ],
+  "source": ["proto-EMDS Execution, Observability and Accountability Policy", "EN 18235-2 (under vote)", "DS4Skills rulebook v0.4 TRUST-04, TRUST-08", "DSSC rule record register v0.1"],
+  "decisionStatus": "example"
+}
