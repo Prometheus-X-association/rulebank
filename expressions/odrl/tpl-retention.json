@@ -1,0 +1,14 @@
+{
+  "uid": "tpl-retention",
+  "name": "Retention and deletion",
+  "dsif:sourceRule": "ptx:rule/L0-RETENTION",
+  "policy": {
+    "permission": [{
+      "action": "use",
+      "target": "@{target}",
+      "constraint": [{"leftOperand": "elapsedTime", "operator": "lteq", "rightOperand": "@{retentionPeriod}"}],
+      "duty": [{"action": "delete", "dsif:enforcementClass": "E1"}]
+    }]
+  },
+  "requestedFields": ["target", "retentionPeriod"]
+}

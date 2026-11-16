@@ -1,0 +1,13 @@
+{
+  "uid": "tpl-purpose-limitation",
+  "name": "Use limited to the contracted purposes",
+  "dsif:sourceRule": "ptx:rule/L0-PURPOSE-LIMITATION",
+  "policy": {
+    "permission": [{
+      "action": "use",
+      "target": "@{target}",
+      "constraint": [{"leftOperand": "purpose", "operator": "isAnyOf", "rightOperand": "@{allowedPurposes}"}]
+    }]
+  },
+  "requestedFields": ["target", "allowedPurposes"]
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/dsif/rulebook/schema/rule-record.schema.json",
+  "title": "Rule record",
+  "description": "One rule of the rule bank. Fields follow the DSSC rule record, with PTX additions for parameters and expressions.",
+  "type": "object",
+  "required": [
+    "@context", "@id", "version", "title", "statement", "strength", "deonticType",
+    "accountable", "executor", "level", "pattern", "parent", "buildingBlock",
+    "enforcementClass", "assuranceLevel", "control", "evidence", "trustFramework",
+    "expressions", "source", "decisionStatus"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "@context": {"type": "string"},
+    "@id": {"type": "string", "pattern": "^(ptx:rule/|dssc:)[A-Za-z0-9.-]+$"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+    "title": {"type": "string", "minLength": 1},
+    "statement": {
+      "type": "object",
+      "required": ["en"],
+      "propertyNames": {"pattern": "^[a-z]{2}$"},
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "strength": {"enum": ["MUST", "SHOULD", "MAY"]},
+    "deonticType": {"enum": ["obligation", "prohibition", "permission"]},
+    "accountable": {"$ref": "#/$defs/roles"},
+    "executor": {"$ref": "#/$defs/roles"},
+    "level": {"type": "integer", "minimum": 0, "maximum": 3},
+    "pattern": {
+      "enum": [
+        "purpose-limitation", "release-threshold", "local-processing", "anonymisation",
+        "credential", "retention", "publication", "logging", "contract", "process"
+      ]
+    },
+    "parameters": {"type": "array", "items": {"$ref": "#/$defs/parameter"}},
+    "parent": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "required": ["rule", "baselineVersion"],
+          "additionalProperties": false,
+          "properties": {
+            "rule": {"type": "string"},
+            "baselineVersion": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "buildingBlock": {"type": "array", "minItems": 1, "maxItems": 2, "items": {"type": "string"}},
+    "enforcementClass": {"$ref": "#/$defs/enforcementClass"},
+    "assuranceLevel": {"enum": ["L1", "L2", "L3"]},
+    "control": {"type": "string", "minLength": 1},
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["type", "visibleTo"],
+        "additionalProperties": false,
+        "properties": {
+          "type": {"type": "string"},
+          "visibleTo": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+        }
+      }
+    },
+    "trustFramework": {"type": "string"},
+    "expressions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/expression"}},
+    "source": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "decisionStatus": {"enum": ["agreed", "provisional", "candidate"]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"level": {"const": 0}}},
+      "then": {"properties": {"parent": {"type": "null"}}}
+    },
+    {
+      "if": {"properties": {"level": {"minimum": 1}}},
+      "then": {"properties": {"parent": {"type": "object"}}}
+    }
+  ],
+  "$defs": {
+    "roles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": ["role:governance-authority", "role:data-provider", "role:data-user", "role:service-provider"]
+      }
+    },
+    "enforcementClass": {"enum": ["E0", "E1", "E2", "E3"]},
+    "parameter": {
+      "type": "object",
+      "required": ["name", "datatype", "case", "setAt"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string", "pattern": "^[a-z][A-Za-z0-9]*$"},
+        "datatype": {"enum": ["boolean", "integer", "decimal", "string", "iri", "duration", "list"]},
+        "case": {"enum": ["open", "bounded", "default", "fixed"]},
+        "value": {},
+        "allowedValues": {"type": "array", "minItems": 1},
+        "setAt": {"type": "integer", "minimum": 0, "maximum": 3},
+        "stricter": {"enum": ["higher", "lower", "subset", "false", "true"]}
+      },
+      "allOf": [
+        {"if": {"properties": {"case": {"enum": ["default", "fixed"]}}}, "then": {"required": ["value"]}},
+        {"if": {"properties": {"case": {"const": "bounded"}}}, "then": {"required": ["allowedValues"]}}
+      ]
+    },
+    "expression": {
+      "type": "object",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "odrl-template", "credential-requirement", "shacl-shape", "contract-clause",
+            "release-gate", "monitoring", "none", "not-yet-specified"
+          ]
+        },
+        "ref": {"type": "string"},
+        "artifact": {"type": "string"},
+        "check": {"type": "string"},
+        "enforcementClass": {"$ref": "#/$defs/enforcementClass"},
+        "coverage": {"enum": ["full", "partial"]},
+        "note": {"type": "string"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"type": {"enum": ["none", "not-yet-specified"]}}},
+          "then": {"not": {"anyOf": [{"required": ["ref"]}, {"required": ["artifact"]}]}},
+          "else": {"required": ["ref", "artifact"]}
+        }
+      ]
+    }
+  }
+}

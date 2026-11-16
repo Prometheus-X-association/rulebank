@@ -1,0 +1,37 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "ptx:rule/L0-RELEASE-THRESHOLD",
+  "version": "0.2",
+  "title": "Minimum group size for aggregated results",
+  "statement": {
+    "en": "A service provider shall not release aggregated results computed on fewer individuals than the minimum group size."
+  },
+  "strength": "MUST",
+  "deonticType": "prohibition",
+  "accountable": ["role:service-provider"],
+  "executor": ["role:service-provider"],
+  "level": 0,
+  "pattern": "release-threshold",
+  "parameters": [
+    {"name": "minCohortSize", "datatype": "integer", "case": "open", "setAt": 1, "stricter": "higher"}
+  ],
+  "parent": null,
+  "buildingBlock": ["Data access"],
+  "enforcementClass": "E3",
+  "assuranceLevel": "L2",
+  "control": "The release gate refuses results below the threshold; gate logs reviewed on sample",
+  "evidence": [
+    {"type": "release-gate-log", "visibleTo": ["governance-authority"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "release-gate",
+      "ref": "edge:gate-min-cohort",
+      "artifact": "expressions/release-gates/gate-min-cohort.json",
+      "check": "cohortSize >= minCohortSize"
+    }
+  ],
+  "source": ["DS4Skills rulebook v0.4 PD-12"],
+  "decisionStatus": "candidate"
+}

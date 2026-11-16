@@ -1,0 +1,39 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "ptx:rule/L0-RETENTION",
+  "version": "0.1",
+  "title": "Retention and deletion",
+  "statement": {
+    "en": "A data user shall use shared data only within the retention period set in the contract and shall delete it when the period ends."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:data-user"],
+  "executor": ["role:data-user"],
+  "level": 0,
+  "pattern": "retention",
+  "parameters": [
+    {"name": "retentionPeriod", "datatype": "duration", "case": "open", "setAt": 1, "stricter": "lower"}
+  ],
+  "parent": null,
+  "buildingBlock": ["Data sharing contract"],
+  "enforcementClass": "E2",
+  "assuranceLevel": "L2",
+  "control": "The connector refuses access after the period; deletion declared by the data user and checked on audit",
+  "evidence": [
+    {"type": "access-decision-log", "visibleTo": ["parties", "governance-authority"]},
+    {"type": "deletion-record", "visibleTo": ["data-provider", "governance-authority"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "odrl-template",
+      "ref": "registry:tpl-retention",
+      "artifact": "expressions/odrl/tpl-retention.json",
+      "enforcementClass": "E2",
+      "note": "The access window is E2. The delete duty inside the template is E1: the connector can't see whether the data was deleted."
+    }
+  ],
+  "source": ["DS4Skills rulebook v0.4 CAT-03", "DSSC rule record register v0.1, M3.policy.01 (retention as a minimum policy concept)"],
+  "decisionStatus": "candidate"
+}

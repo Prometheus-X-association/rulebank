@@ -1,0 +1,36 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "ptx:rule/L0-PURPOSE-LIMITATION",
+  "version": "0.1",
+  "title": "Use limited to the contracted purposes",
+  "statement": {
+    "en": "A data user shall use shared data only for the purposes stated in the contract."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:data-user"],
+  "executor": ["role:data-user"],
+  "level": 0,
+  "pattern": "purpose-limitation",
+  "parameters": [
+    {"name": "allowedPurposes", "datatype": "list", "case": "open", "setAt": 2, "stricter": "subset"}
+  ],
+  "parent": null,
+  "buildingBlock": ["Data sharing contract", "Data product description"],
+  "enforcementClass": "E2",
+  "assuranceLevel": "L2",
+  "control": "Policy validated at publication; each access request evaluated against the contracted purposes",
+  "evidence": [
+    {"type": "access-decision-log", "visibleTo": ["parties", "governance-authority"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "odrl-template",
+      "ref": "registry:tpl-purpose-limitation",
+      "artifact": "expressions/odrl/tpl-purpose-limitation.json"
+    }
+  ],
+  "source": ["DS4Skills rulebook v0.4 PD-03", "xAPI for Research rules (draft)"],
+  "decisionStatus": "candidate"
+}

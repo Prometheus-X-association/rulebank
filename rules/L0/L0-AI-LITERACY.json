@@ -1,0 +1,29 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "ptx:rule/L0-AI-LITERACY",
+  "version": "0.1",
+  "title": "AI literacy of staff",
+  "statement": {
+    "en": "A service provider using AI shall ensure appropriate AI literacy for its staff and human overseers."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:service-provider"],
+  "executor": ["role:service-provider"],
+  "level": 0,
+  "pattern": "process",
+  "parent": null,
+  "buildingBlock": ["Participation management"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "Self-declaration at admission; governance authority may request records on audit",
+  "evidence": [
+    {"type": "training-completion-record", "visibleTo": ["governance-authority"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {"type": "none"}
+  ],
+  "source": ["DS4Skills rulebook v0.4 AI-16"],
+  "decisionStatus": "candidate"
+}

@@ -1,0 +1,10 @@
+{
+  "@id": "edge:gate-min-cohort",
+  "dsif:sourceRule": "ptx:rule/L0-RELEASE-THRESHOLD",
+  "description": "Refuse to release an aggregated result computed on fewer individuals than the minimum group size.",
+  "inputs": ["cohortSize"],
+  "parameters": ["minCohortSize"],
+  "check": "cohortSize >= minCohortSize",
+  "onFail": "refuse-release",
+  "log": "release-gate-log"
+}

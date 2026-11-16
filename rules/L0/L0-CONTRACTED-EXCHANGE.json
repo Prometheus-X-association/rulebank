@@ -1,0 +1,32 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "ptx:rule/L0-CONTRACTED-EXCHANGE",
+  "version": "0.1",
+  "title": "No exchange without a contract",
+  "statement": {
+    "en": "A data user shall not access shared data unless a signed contract covers that access."
+  },
+  "strength": "MUST",
+  "deonticType": "prohibition",
+  "accountable": ["role:data-user"],
+  "executor": ["role:data-user"],
+  "level": 0,
+  "pattern": "contract",
+  "parent": null,
+  "buildingBlock": ["Data sharing contract", "Data exchange"],
+  "enforcementClass": "E2",
+  "assuranceLevel": "L2",
+  "control": "The connector refuses an exchange that no signed contract covers; refusals are logged",
+  "evidence": [
+    {"type": "access-decision-log", "visibleTo": ["parties", "governance-authority"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "note": "Enforced by design in the PTX connector and Contract Manager, so there is no artifact to point to. The expression type for built-in checks is still to decide."
+    }
+  ],
+  "source": ["xAPI for Research rules (draft)"],
+  "decisionStatus": "candidate"
+}
