@@ -92,7 +92,6 @@ python scripts/rulebank.py status --write
 - **Profile terms.** `dsif:sourceRule` and `dsif:enforcementClass` come from the DSIF ODRL profile plan and are not published yet.
 - **Release gate format.** To align with the Edge Node Server: gate identifiers, check expression format, what the gate log contains.
 - **Checks built into the connector.** `L0-CONTRACTED-EXCHANGE` is enforced by the PTX connector by design. We still have to decide how a record points to a built-in check.
-- **One obligation per record.** `L0-RETENTION` still bundles two duties (use within the period, delete after), as in its source. To split or not, with the Legal Data Space.
 - **More Level 0 rules.** Other rules are being placed with the DSSC Rulebook Accelerator. They enter the bank once their level is agreed.
 
 ## Contributing
