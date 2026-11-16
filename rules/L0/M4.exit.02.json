@@ -1,0 +1,46 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M4.exit.02",
+  "version": "0.1",
+  "title": "Portability and exit at Level 0",
+  "statement": {
+    "en": "The rulebook shall state what happens to the data a participant has shared, its credentials, its logs and its contract records when it leaves; the values (retention, return or deletion, periods) are set at Level 1; retention duties under law prevail."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority", "role:operator"],
+  "level": 0,
+  "pattern": "process",
+  "parameters": [
+    {
+      "name": "sharedDataTreatment",
+      "datatype": "string",
+      "case": "bounded",
+      "allowedValues": ["retain", "return", "delete"],
+      "setAt": 1
+    },
+    {"name": "exitPeriod", "datatype": "duration", "case": "open", "setAt": 1, "stricter": "lower"}
+  ],
+  "parent": null,
+  "buildingBlock": ["Contractual framework", "Participation management"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "Offboarding checklist completed and reviewed for each leaving participant; revocation visible in the trust framework",
+  "evidence": [
+    {"type": "offboarding-checklist", "visibleTo": ["leaving-participant", "governance-authority"]},
+    {"type": "export-receipt", "visibleTo": ["leaving-participant", "governance-authority"]},
+    {"type": "revocation-record", "visibleTo": ["leaving-participant", "governance-authority"]}
+  ],
+  "trustFramework": "dssc:M1.trust.01",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Offboarding checklist completed by people."},
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "Credential revocation entry under the trust framework."
+    }
+  ],
+  "source": ["DSSC plenary 12 October 2026", "DSSC decision log D-20", "DS4Skills rulebook v0.4 OPS-05, GOV-08, SLA-11 (through M4.exit.01, to be merged)", "DSSC rule record register v0.1"],
+  "decisionStatus": "agreed"
+}

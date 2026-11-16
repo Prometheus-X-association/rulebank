@@ -1,0 +1,33 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M3.trust.02",
+  "version": "0.1",
+  "title": "Trust anchors and issuers",
+  "statement": {
+    "en": "For each claim type the rulebook shall name who may issue or vouch for the claim."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "credential",
+  "parent": null,
+  "buildingBlock": ["Trust framework"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "The issuer list is published per claim type and used by the verifier",
+  "evidence": [
+    {"type": "issuer-list", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "dssc:M1.trust.01",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "Trusted-issuer list and credential ontology, where credentials are verified."
+    }
+  ],
+  "source": ["EN 18235-2 annex A.3.3", "DSSC plenary 19 October 2026", "DSSC decision log D-24", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}

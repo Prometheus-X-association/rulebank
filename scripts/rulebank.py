@@ -111,13 +111,15 @@ def expression_status(rec):
 
 def status_table(rules):
     lines = [
-        "| Rule | Title | Class | Expression | Status |",
-        "| --- | --- | --- | --- | --- |",
+        "| Rule | Title | Decision | Class | Expression | Expression status |",
+        "| --- | --- | --- | --- | --- | --- |",
     ]
     for path, rec in sorted(rules, key=lambda r: (r[1]["level"], r[1]["@id"])):
         link = f"[`{rec['@id']}`]({path.relative_to(ROOT).as_posix()})"
         types = ", ".join(sorted({e["type"] for e in rec["expressions"]}))
-        lines.append(f"| {link} | {rec['title']} | {rec['enforcementClass']} | {types} | {expression_status(rec)} |")
+        lines.append(
+            f"| {link} | {rec['title']} | {rec['decisionStatus']} | {rec['enforcementClass']} | {types} | {expression_status(rec)} |"
+        )
     return "\n".join(lines)
 
 

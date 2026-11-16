@@ -1,0 +1,32 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M0.principle.04",
+  "version": "0.1",
+  "title": "Every rule names who it binds and how it is checked",
+  "statement": {
+    "en": "Every rule in the rulebook shall name the role it binds and how compliance is checked."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Trust framework", "Provenance and observability"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "Every rule record has its role, control and evidence fields filled",
+  "evidence": [
+    {"type": "rule-record", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "note": "Met by the rule record itself: the schema of this bank requires accountable, executor, control and evidence."
+    }
+  ],
+  "source": ["DSSC plenary 28 September 2026", "DSSC decision log D-07, D-27", "DSSC rule record register v0.1"],
+  "decisionStatus": "agreed"
+}

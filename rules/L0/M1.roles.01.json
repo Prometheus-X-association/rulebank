@@ -1,0 +1,33 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M1.roles.01",
+  "version": "0.1",
+  "title": "Core roles",
+  "statement": {
+    "en": "The rulebook shall define at least the roles governance authority, data provider, data user and service provider, by responsibility; further roles (intermediary, operator) are defined where used."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Organisational form and governance authority", "Intermediaries and operators"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "Rulebook text and responsibility matrix checked for the four roles at each rulebook release",
+  "evidence": [
+    {"type": "rulebook-text", "visibleTo": ["public"]},
+    {"type": "responsibility-matrix", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "note": "Role vocabulary (ISO/IEC 20151). The roles of this bank follow the DSSC core roles."
+    }
+  ],
+  "source": ["DSSC plenary 28 September 2026", "DSSC decision log D-08, D-16", "DSSC rule record register v0.1"],
+  "decisionStatus": "agreed"
+}

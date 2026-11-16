@@ -1,0 +1,29 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M0.principle.01",
+  "version": "0.1",
+  "title": "Participants keep control over the use of their data",
+  "statement": {
+    "en": "Every rulebook shall state that participants keep control over the use of the data they share, and how that control is exercised."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Contractual framework", "Data sharing contract"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "The rulebook text states the principle and how control is exercised; checked at each rulebook release",
+  "evidence": [
+    {"type": "rulebook-text", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {"type": "none"}
+  ],
+  "source": ["DSSC plenary 28 September 2026", "DSSC decision log D-04", "DSSC rule record register v0.1"],
+  "decisionStatus": "agreed"
+}

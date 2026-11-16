@@ -1,0 +1,36 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M3.federation.01",
+  "version": "0.1",
+  "title": "Data space self-description and identifier",
+  "statement": {
+    "en": "The governance authority shall publish at a well-known address a machine-readable self-description of the data space that states its identifier, the location and version of its rulebook, its catalogue and connector endpoints, the policy and semantic profiles it uses, the trust framework it applies and the onboarding checks it accepts, and its joining conditions. Claims and metadata that rely on the data space's policies shall carry its identifier."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority", "role:participant"],
+  "level": 0,
+  "pattern": "publication",
+  "parameters": [
+    {"name": "selfDescriptionFormat", "datatype": "iri", "case": "open", "setAt": 1}
+  ],
+  "parent": null,
+  "buildingBlock": ["Intermediaries and operators", "Trust framework"],
+  "enforcementClass": "E2",
+  "assuranceLevel": "L1",
+  "control": "The self-description resolves at the well-known address and validates against the Level 1 format; the identifier appears in claims and metadata",
+  "evidence": [
+    {"type": "published-self-description", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "The self-description names the trust framework; its own authenticity is signed under it",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "JSON-LD self-description. The DSIF Connection Profile and the Gaia-X self-description are the candidate formats."
+    }
+  ],
+  "source": ["DS4Skills rulebook v0.4 GOV-09, TRUST-09, TRUST-10", "EN 18235-3 (draft)", "DSIF Scope, Complexity and Approach (Connection Profile)", "DSSC rule record register v0.1"],
+  "decisionStatus": "example"
+}

@@ -1,0 +1,38 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M1.change.01",
+  "version": "0.1",
+  "title": "Changing the rules",
+  "statement": {
+    "en": "The governance authority shall adopt a change to the rulebook only after consulting the participants and by the decision rule set in the governance model, shall publish each version with a change log, and shall give notice of at least the period set at Level 1 before a change enters into force. Local extensions may strengthen a core rule but shall not weaken it."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parameters": [
+    {"name": "noticePeriod", "datatype": "duration", "case": "open", "setAt": 1, "stricter": "higher"}
+  ],
+  "parent": null,
+  "buildingBlock": ["Organisational form and governance authority"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "For each version: a consultation record, a decision record, a published change log and a notice date exist",
+  "evidence": [
+    {"type": "version-register", "visibleTo": ["public"]},
+    {"type": "change-log", "visibleTo": ["public"]},
+    {"type": "consultation-minutes", "visibleTo": ["public"]},
+    {"type": "notice", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "note": "Rulebook version identifier carried in the data space self-description; rule identifiers stable across versions."
+    }
+  ],
+  "source": ["proto-EMDS General Terms and Conditions", "DS4Skills rulebook v0.4 GOV-01 to GOV-03", "DSSC decision log D-06", "DSSC rule record register v0.1"],
+  "decisionStatus": "example"
+}

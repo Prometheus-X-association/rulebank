@@ -1,0 +1,37 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M3.catalogue.01",
+  "version": "0.1",
+  "title": "Catalogue entry before offering",
+  "statement": {
+    "en": "A data provider shall publish a catalogue entry for each data product before offering it, conforming to the metadata profile set at Level 1, and the entry shall include at least the usage conditions, a personal-data flag and an AI-use flag. The catalogue service shall validate the entry against the profile before it becomes visible."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:data-provider"],
+  "executor": ["role:data-provider", "role:service-provider"],
+  "level": 0,
+  "pattern": "publication",
+  "parameters": [
+    {"name": "metadataProfile", "datatype": "iri", "case": "open", "setAt": 1}
+  ],
+  "parent": null,
+  "buildingBlock": ["Data space offerings", "Data product description"],
+  "enforcementClass": "E2",
+  "assuranceLevel": "L2",
+  "control": "Automatic validation against the profile at publication; periodic check that every offered product has a valid entry",
+  "evidence": [
+    {"type": "validated-catalogue-entry", "visibleTo": ["participants"]},
+    {"type": "validation-result", "visibleTo": ["participants"]}
+  ],
+  "trustFramework": "none; the provider's identity is validated under dssc:M1.participation.01",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "SHACL shape on the DCAT-AP view of the offer, extended by the Level 1 metadata profile."
+    }
+  ],
+  "source": ["DS4Skills rulebook v0.4 CAT-01, CAT-02, CAT-11", "EN 18235-3 (draft)", "proto-EMDS Metadata Governance and Catalogue Visibility Policy", "DSSC rule record register v0.1"],
+  "decisionStatus": "example"
+}

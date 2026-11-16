@@ -1,0 +1,41 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M5.trust.06",
+  "version": "0.1",
+  "title": "Machine-verifiable claims",
+  "statement": {
+    "en": "Where credentials are used, claims shall be machine-verifiable in the format named at Level 1; where not, the rulebook shall describe how people perform the check."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority", "role:participant"],
+  "level": 0,
+  "pattern": "credential",
+  "parameters": [
+    {"name": "credentialFormat", "datatype": "iri", "case": "open", "setAt": 1}
+  ],
+  "parent": null,
+  "buildingBlock": ["Trust framework"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "A verification result is recorded for each presented claim",
+  "evidence": [
+    {"type": "verification-result", "visibleTo": ["governance-authority", "participant"]}
+  ],
+  "trustFramework": "dssc:M1.trust.01",
+  "expressions": [
+    {
+      "type": "none",
+      "enforcementClass": "E1",
+      "note": "Check performed by people, as described in the rulebook, where credentials are not used."
+    },
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "Verifiable credential and shapes, where credentials are used."
+    }
+  ],
+  "source": ["DSSC plenary 19 October 2026", "DS4Skills, PPDS, DEPLOYTOUR homework 3 returns", "DSSC decision log D-24", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}

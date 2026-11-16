@@ -1,0 +1,33 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M3.delegation.01",
+  "version": "0.1",
+  "title": "Delegation evidence distinct from identity",
+  "statement": {
+    "en": "Where a party acts for another, delegation evidence distinct from identity shall be checked at the time of action; the evidence format is set at Level 1. A mandate for software agents carries the same evidence."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:data-user", "role:service-provider"],
+  "executor": ["role:data-user", "role:service-provider"],
+  "level": 0,
+  "pattern": "credential",
+  "parameters": [
+    {"name": "delegationEvidenceFormat", "datatype": "iri", "case": "open", "setAt": 1}
+  ],
+  "parent": null,
+  "buildingBlock": ["Trust framework", "Data access"],
+  "enforcementClass": "E2",
+  "assuranceLevel": "L2",
+  "control": "The access decision checks delegation evidence at the time of action",
+  "evidence": [
+    {"type": "delegation-evidence", "visibleTo": ["parties", "governance-authority"]},
+    {"type": "access-decision-log", "visibleTo": ["parties", "governance-authority"]}
+  ],
+  "trustFramework": "dssc:M1.trust.01",
+  "expressions": [
+    {"type": "not-yet-specified", "enforcementClass": "E2", "note": "Mandate credential or delegation evidence."}
+  ],
+  "source": ["SAGE proposal", "DSSC homework 2", "DSSC decision log D-14", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}
