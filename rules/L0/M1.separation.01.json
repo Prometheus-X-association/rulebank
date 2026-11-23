@@ -1,0 +1,36 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M1.separation.01",
+  "version": "0.1",
+  "title": "Who sets, who operates, who checks",
+  "statement": {
+    "en": "The rulebook shall name the body that performs each of rule-setting, operation and assurance. Where one body performs more than one of these, the overlap shall be disclosed in the rulebook and reviewed at least annually by a body that does not perform it. A body that assures a service shall not be the body that provides or operates it."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority", "role:operator"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Organisational form and governance authority", "Intermediaries and operators"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "The responsibility matrix names a body per function; a review record exists for each disclosed overlap",
+  "evidence": [
+    {"type": "responsibility-matrix", "visibleTo": ["public"]},
+    {"type": "disclosure-statement", "visibleTo": ["public"]},
+    {"type": "review-minutes", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Responsibility matrix and annual review checked by people."},
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E1",
+      "note": "Roles and bodies listed in the data space self-description (dssc:M3.federation.01)."
+    }
+  ],
+  "source": ["DSSC plenary 28 September 2026", "DS4Skills rulebook v0.4 GOV-05, TRUST-01, TRUST-03", "SAGE governance playbook", "Data Governance Act neutrality requirements for intermediaries", "KU Leuven 8 October 2026", "DSSC decision log O-04, D-25 (to be merged with M1.separation.02)", "DSSC rule record register v0.1"],
+  "decisionStatus": "example"
+}

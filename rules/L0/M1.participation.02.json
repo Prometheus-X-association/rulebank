@@ -1,0 +1,42 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M1.participation.02",
+  "version": "0.1",
+  "title": "Participant identification",
+  "statement": {
+    "en": "Every participant must be identified before admission, using a verifiable identifier appropriate to its participant type, and must meet the minimum level of identity assurance required for its intended role. Identification establishes the participant as a trusted actor in the data space; access rights follow from, and are proportionate to, the assurance level achieved."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:operator", "role:participant"],
+  "level": 0,
+  "pattern": "credential",
+  "parameters": [
+    {"name": "identifierTypes", "datatype": "list", "case": "open", "setAt": 1},
+    {"name": "minIdentityAssurance", "datatype": "string", "case": "open", "setAt": 1}
+  ],
+  "parent": null,
+  "buildingBlock": ["Participation management", "Trust framework"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "The operator performs identity verification under the oversight of the governance authority",
+  "evidence": [
+    {"type": "participant-registry-entry", "visibleTo": ["governance-authority", "participant"]}
+  ],
+  "trustFramework": "dssc:M1.trust.01",
+  "expressions": [
+    {
+      "type": "none",
+      "enforcementClass": "E1",
+      "note": "Registered identifiers (business registry, VAT, LEI, EORI) checked by the operator against official registries. DSSC records this case as E0."
+    },
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "Automatic identity verification with wallet-based identities (eIDAS 2.0); credential ontology and trusted issuer list."
+    }
+  ],
+  "source": ["SAGE (GDDS) own rule", "iSHARE Trust Framework (identification separate from authorisation)", "DSSC decision log O-18", "DSSC rule record register v0.1"],
+  "decisionStatus": "candidate"
+}

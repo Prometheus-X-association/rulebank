@@ -1,0 +1,34 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M4.trust.04",
+  "version": "0.1",
+  "title": "Trust services and delegation",
+  "statement": {
+    "en": "The governance authority shall remain accountable for every check and shall name who executes and who reviews it; these may differ. Where an accreditor exists it shall be named and shall not assess a service it operates; no rulebook is required to create one."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Trust framework", "Organisational form and governance authority"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "The responsibility matrix names executor and reviewer for each check; review records kept",
+  "evidence": [
+    {"type": "responsibility-matrix", "visibleTo": ["public"]},
+    {"type": "review-records", "visibleTo": ["governance-authority"]}
+  ],
+  "trustFramework": "dssc:M1.trust.01",
+  "expressions": [
+    {
+      "type": "none",
+      "enforcementClass": "E1",
+      "note": "Checked by people. The accountable and executor fields of each rule record already carry part of it."
+    }
+  ],
+  "source": ["DSSC plenary 19 October 2026", "DSSC decision log D-24, O-02", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}

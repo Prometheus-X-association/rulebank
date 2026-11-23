@@ -1,0 +1,47 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M4.exit.01",
+  "version": "0.1",
+  "title": "Portability and exit",
+  "statement": {
+    "en": "When a participant leaves the data space, the operator shall provide the participant, within the period set at Level 1, an export of its own assets, catalogue metadata, transaction records and contract records, shall revoke its credentials, and the rulebook shall state what happens to data already shared and to audit records. Retention duties under law prevail over deletion."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:operator"],
+  "executor": ["role:operator", "role:participant"],
+  "level": 0,
+  "pattern": "process",
+  "parameters": [
+    {"name": "exitPeriod", "datatype": "duration", "case": "open", "setAt": 1, "stricter": "lower"},
+    {"name": "exportFormats", "datatype": "list", "case": "open", "setAt": 1},
+    {
+      "name": "sharedDataTreatment",
+      "datatype": "string",
+      "case": "bounded",
+      "allowedValues": ["retain", "return", "delete"],
+      "setAt": 1
+    }
+  ],
+  "parent": null,
+  "buildingBlock": ["Participation management", "Intermediaries and operators"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "Offboarding checklist completed per leaving participant; revocation visible in the trust framework",
+  "evidence": [
+    {"type": "export-receipt", "visibleTo": ["leaving-participant", "governance-authority"]},
+    {"type": "revocation-record", "visibleTo": ["leaving-participant", "governance-authority"]},
+    {"type": "offboarding-checklist", "visibleTo": ["leaving-participant", "governance-authority"]}
+  ],
+  "trustFramework": "dssc:M1.trust.01",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Offboarding checklist completed by people."},
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "Credential revocation entry under the trust framework; export in the Level 1 formats."
+    }
+  ],
+  "source": ["DS4Skills rulebook v0.4 OPS-05, GOV-08, SLA-11", "proto-EMDS General Terms and Conditions", "Sitra model General Terms (effects of termination)", "ICUdata4EU homework 2", "DSSC decision log D-20 (to be merged with M4.exit.02)", "DSSC rule record register v0.1"],
+  "decisionStatus": "example"
+}

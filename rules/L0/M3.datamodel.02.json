@@ -1,0 +1,33 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M3.datamodel.02",
+  "version": "0.1",
+  "title": "PPDS data is self-descriptive and decoupled from applications",
+  "statement": {
+    "en": "Public procurement graphs \"know\" their meaning, their provenance (incl. transformations), policies, validation, and business rules."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:operator"],
+  "executor": ["role:operator", "role:service-provider"],
+  "level": 0,
+  "pattern": "publication",
+  "parent": null,
+  "buildingBlock": ["Intermediaries and operators"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L3",
+  "control": "Architecture and portability tests reviewed by the body commissioning the data space",
+  "evidence": [
+    {"type": "architecture-documentation", "visibleTo": ["governance-authority"]},
+    {"type": "portability-test-results", "visibleTo": ["governance-authority"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "note": "Open where the description resides. Candidate: SHACL shapes and business rules published with the data."
+    }
+  ],
+  "source": ["PPDS own rule", "PPDS tender specification, Annex I, 1.8.1", "DSSC decision log O-18", "DSSC rule record register v0.1"],
+  "decisionStatus": "candidate"
+}

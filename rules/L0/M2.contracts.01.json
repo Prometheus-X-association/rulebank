@@ -1,0 +1,33 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M2.contracts.01",
+  "version": "0.1",
+  "title": "Contractual structure and hierarchy of documents",
+  "statement": {
+    "en": "The rulebook shall specify the matters to be agreed between participants, its contractual structure (constitutive or accession agreement, rulebook, terms of use) and the hierarchy of the documents; which instruments it uses is Level 1."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "contract",
+  "parameters": [
+    {"name": "contractInstruments", "datatype": "list", "case": "open", "setAt": 1}
+  ],
+  "parent": null,
+  "buildingBlock": ["Contractual framework"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "The rulebook states the matters to agree, the contractual structure and the hierarchy of documents",
+  "evidence": [
+    {"type": "rulebook", "visibleTo": ["public"]},
+    {"type": "agreements", "visibleTo": ["parties"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Rulebook and agreements checked by people."}
+  ],
+  "source": ["KU Leuven 5 October 2026 (contractual architecture)", "DSSC decision log D-23, O-13", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}

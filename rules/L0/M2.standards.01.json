@@ -1,0 +1,32 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M2.standards.01",
+  "version": "0.1",
+  "title": "Standards strategy as part of governance",
+  "statement": {
+    "en": "The rulebook shall state which technical standards are required, which are recommended, how the data space engages with standardisation and how standards are updated; harmonised standards under the Data Act apply where they exist."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parameters": [
+    {"name": "requiredStandards", "datatype": "list", "case": "open", "setAt": 1, "stricter": "subset"}
+  ],
+  "parent": null,
+  "buildingBlock": ["Organisational form and governance authority", "Data access"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "The standards register in the rulebook states required and recommended standards, engagement in standardisation and the update process",
+  "evidence": [
+    {"type": "standards-register", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Standards register checked by people."}
+  ],
+  "source": ["KU Leuven 8 October 2026", "DSSC decision log O-15, D-25", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}

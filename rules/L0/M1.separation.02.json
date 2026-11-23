@@ -1,0 +1,29 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M1.separation.02",
+  "version": "0.1",
+  "title": "Rule-setting, operation and assurance named",
+  "statement": {
+    "en": "The rulebook shall name which body performs rule-setting, which operates, and which assures, and shall disclose overlaps. Separation of these functions is a direction and maturity target, not a core rule."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parent": null,
+  "buildingBlock": ["Organisational form and governance authority", "Intermediaries and operators"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "The responsibility matrix names a body per function and discloses overlaps",
+  "evidence": [
+    {"type": "responsibility-matrix", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Responsibility matrix checked by people."}
+  ],
+  "source": ["DSSC plenary 28 September 2026", "KU Leuven concept note", "DSSC decision log O-04, D-25 (to be merged with M1.separation.01)", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}
