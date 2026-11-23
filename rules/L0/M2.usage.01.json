@@ -1,0 +1,38 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M2.usage.01",
+  "version": "0.1",
+  "title": "Training of AI models",
+  "statement": {
+    "en": "Data shared within the data space shall not be reproduced or extracted for the training of AI models, except where such use has been expressly authorised by the data provider."
+  },
+  "strength": "MUST",
+  "deonticType": "prohibition",
+  "accountable": ["role:data-user"],
+  "executor": ["role:data-user", "role:data-provider"],
+  "level": 0,
+  "pattern": "purpose-limitation",
+  "parameters": [
+    {"name": "aiTrainingAllowed", "datatype": "boolean", "case": "default", "value": false, "setAt": 3, "stricter": "false"}
+  ],
+  "parent": null,
+  "buildingBlock": ["Data space offerings", "Contractual framework"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "The data provider states in the offer whether AI training is authorised; the constitutive agreement prohibits it otherwise",
+  "evidence": [
+    {"type": "offer-description", "visibleTo": ["participants"]},
+    {"type": "constitutive-agreement", "visibleTo": ["parties"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Contractual prohibition in the constitutive agreement."},
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "AI-use flag in the offer (dssc:M3.catalogue.01) and ODRL prohibition on AI training in the usage policy (dssc:M3.policy.01)."
+    }
+  ],
+  "source": ["TEMS rulebook (draft)", "DSSC decision log O-18, O-17", "DSSC rule record register v0.1"],
+  "decisionStatus": "candidate"
+}

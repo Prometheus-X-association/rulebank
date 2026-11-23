@@ -1,0 +1,39 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M1.intermediary.01",
+  "version": "0.1",
+  "title": "Safeguards regardless of DGA status",
+  "statement": {
+    "en": "Where an intermediation function exists, the rulebook shall provide the DGA safeguards (neutrality, non-discrimination, liability, remedies) and identify their legal basis: the DGA where it applies, otherwise contract or data space rules."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority", "role:intermediary"],
+  "level": 0,
+  "pattern": "governance",
+  "parameters": [
+    {
+      "name": "safeguardsLegalBasis",
+      "datatype": "string",
+      "case": "bounded",
+      "allowedValues": ["dga", "contract", "data-space-rules"],
+      "setAt": 1
+    }
+  ],
+  "parent": null,
+  "buildingBlock": ["Intermediaries and operators"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "Rulebook clauses reviewed against the four safeguards; DGA status of each intermediation function assessed",
+  "evidence": [
+    {"type": "rulebook-clauses", "visibleTo": ["public"]},
+    {"type": "dga-status-assessment", "visibleTo": ["governance-authority"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Clauses and DGA assessment checked by people."}
+  ],
+  "source": ["DSSC legal session 5 October 2026", "DSSC plenary 19 October 2026 (concept note)", "DSSC decision log D-17, D-25, O-06", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}

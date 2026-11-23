@@ -1,0 +1,36 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M4.evidence.01",
+  "version": "0.1",
+  "title": "Evidence visibility",
+  "statement": {
+    "en": "The rulebook shall state who may see each class of evidence about a participant; by default the governance authority and the participant itself, other participants in a dispute or with the participant's consent."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "governance",
+  "parameters": [
+    {"name": "defaultVisibility", "datatype": "list", "case": "default", "value": ["governance-authority", "participant"], "setAt": 1}
+  ],
+  "parent": null,
+  "buildingBlock": ["Provenance and observability", "Contractual framework"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "The rulebook states the access rules for each class of evidence",
+  "evidence": [
+    {"type": "evidence-access-rules", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E1",
+      "note": "Access classification per class of evidence. The visibleTo field of each rule record already gives it per rule."
+    }
+  ],
+  "source": ["DSSC plenary 19 October 2026", "DS4Skills and TEMS returns", "DSSC decision log D-24", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}

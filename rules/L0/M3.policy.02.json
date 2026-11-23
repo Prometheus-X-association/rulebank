@@ -1,0 +1,36 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M3.policy.02",
+  "version": "0.1",
+  "title": "Minimum policy concepts",
+  "statement": {
+    "en": "Usage conditions shall travel with the asset in machine-readable form and shall be able to express at least purpose, onward sharing, provenance, AI use and logging; retention, revocation and the enforcement point to be added."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:data-provider"],
+  "executor": ["role:data-provider"],
+  "level": 0,
+  "pattern": "publication",
+  "parameters": [
+    {"name": "policyProfile", "datatype": "iri", "case": "open", "setAt": 1}
+  ],
+  "parent": null,
+  "buildingBlock": ["Data sharing contract", "Data access"],
+  "enforcementClass": "E2",
+  "assuranceLevel": "L2",
+  "control": "The policy attached to the catalogue entry is validated against the Level 1 profile",
+  "evidence": [
+    {"type": "policy-attached-to-catalogue-entry", "visibleTo": ["participants"]}
+  ],
+  "trustFramework": "none",
+  "expressions": [
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "ODRL profile or the Level 1 vocabulary. Purpose and retention are covered by the templates of ptx:rule/L0-PURPOSE-LIMITATION and ptx:rule/L0-RETENTION."
+    }
+  ],
+  "source": ["DSSC homework 2", "EN 18235-3 (draft)", "DSSC decision log D-13 (to be merged with M3.policy.01)", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}

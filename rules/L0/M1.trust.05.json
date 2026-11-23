@@ -1,0 +1,37 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M1.trust.05",
+  "version": "0.1",
+  "title": "Recognition of claims across data spaces",
+  "statement": {
+    "en": "Each claim type shall state its assurance level and its trust anchor, so that another data space can decide whether to accept or re-check the claim; recognition itself is not required."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "credential",
+  "parameters": [
+    {"name": "recognisedSchemes", "datatype": "list", "case": "open", "setAt": 1}
+  ],
+  "parent": null,
+  "buildingBlock": ["Trust framework"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L1",
+  "control": "The trust framework document states the assurance level and trust anchor of each claim type",
+  "evidence": [
+    {"type": "trust-framework-document", "visibleTo": ["public"]}
+  ],
+  "trustFramework": "dssc:M1.trust.01",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Trust framework document checked by people."},
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "Assurance level and trust anchor in the claim schema, readable by another data space."
+    }
+  ],
+  "source": ["DSSC plenaries 12 and 19 October 2026", "DSSC decision log D-24", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}

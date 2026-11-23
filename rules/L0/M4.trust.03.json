@@ -1,0 +1,39 @@
+{
+  "@context": "https://raw.githubusercontent.com/Prometheus-X-association/rulebank/main/context/rulebank.jsonld",
+  "@id": "dssc:M4.trust.03",
+  "version": "0.1",
+  "title": "Re-validation and revocation",
+  "statement": {
+    "en": "The rulebook shall state the triggers for re-validating participant claims (interval, expiry, material change) and shall provide revocation visible to those who rely on the claim."
+  },
+  "strength": "MUST",
+  "deonticType": "obligation",
+  "accountable": ["role:governance-authority"],
+  "executor": ["role:governance-authority"],
+  "level": 0,
+  "pattern": "credential",
+  "parameters": [
+    {"name": "revalidationInterval", "datatype": "duration", "case": "open", "setAt": 1, "stricter": "lower"},
+    {"name": "revalidationTriggers", "datatype": "list", "case": "open", "setAt": 1, "stricter": "subset"}
+  ],
+  "parent": null,
+  "buildingBlock": ["Trust framework", "Participation management"],
+  "enforcementClass": "E1",
+  "assuranceLevel": "L2",
+  "control": "Re-validation log reviewed; the issuer publishes revocation where relying parties check it",
+  "evidence": [
+    {"type": "revalidation-log", "visibleTo": ["governance-authority", "participant"]},
+    {"type": "revocation-entry", "visibleTo": ["relying-parties"]}
+  ],
+  "trustFramework": "dssc:M1.trust.01",
+  "expressions": [
+    {"type": "none", "enforcementClass": "E1", "note": "Re-validation log reviewed by people."},
+    {
+      "type": "not-yet-specified",
+      "enforcementClass": "E2",
+      "note": "Revocation list or status credential, checked by the verifier."
+    }
+  ],
+  "source": ["EN 18235-2 5.2.6.2 notes", "DS4Skills and TEMS returns", "DSSC decision log D-24", "DSSC rule record register v0.1"],
+  "decisionStatus": "provisional"
+}

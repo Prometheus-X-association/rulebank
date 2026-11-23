@@ -20,19 +20,33 @@ Level 0 holds the rules common to all data spaces. Some are fixed, others are ge
 | [`dssc:M1.change.01`](rules/L0/M1.change.01.json) | Changing the rules | example | E1 | not-yet-specified | remains to do |
 | [`dssc:M1.conformance.01`](rules/L0/M1.conformance.01.json) | Conformance of the data space rulebook to the common interoperability baseline | candidate | E1 | none, not-yet-specified | partial |
 | [`dssc:M1.eligibility.01`](rules/L0/M1.eligibility.01.json) | Eligibility conditions and minimum onboarding checks | agreed | E1 | none, not-yet-specified | partial |
+| [`dssc:M1.intermediary.01`](rules/L0/M1.intermediary.01.json) | Safeguards regardless of DGA status | provisional | E1 | none | checked by people |
 | [`dssc:M1.participation.01`](rules/L0/M1.participation.01.json) | Validation of participants at onboarding and during the lifecycle | example | E1 | none, not-yet-specified | partial |
+| [`dssc:M1.participation.02`](rules/L0/M1.participation.02.json) | Participant identification | candidate | E1 | none, not-yet-specified | partial |
 | [`dssc:M1.roles.01`](rules/L0/M1.roles.01.json) | Core roles | agreed | E1 | not-yet-specified | remains to do |
+| [`dssc:M1.separation.01`](rules/L0/M1.separation.01.json) | Who sets, who operates, who checks | example | E1 | none, not-yet-specified | partial |
+| [`dssc:M1.separation.02`](rules/L0/M1.separation.02.json) | Rule-setting, operation and assurance named | provisional | E1 | none | checked by people |
 | [`dssc:M1.trust.01`](rules/L0/M1.trust.01.json) | Trust framework reference | provisional | E1 | not-yet-specified | remains to do |
+| [`dssc:M1.trust.05`](rules/L0/M1.trust.05.json) | Recognition of claims across data spaces | provisional | E1 | none, not-yet-specified | partial |
+| [`dssc:M2.contracts.01`](rules/L0/M2.contracts.01.json) | Contractual structure and hierarchy of documents | provisional | E1 | none | checked by people |
+| [`dssc:M2.standards.01`](rules/L0/M2.standards.01.json) | Standards strategy as part of governance | provisional | E1 | none | checked by people |
+| [`dssc:M2.usage.01`](rules/L0/M2.usage.01.json) | Training of AI models | candidate | E1 | none, not-yet-specified | partial |
 | [`dssc:M3.catalogue.01`](rules/L0/M3.catalogue.01.json) | Catalogue entry before offering | example | E2 | not-yet-specified | remains to do |
 | [`dssc:M3.datamodel.01`](rules/L0/M3.datamodel.01.json) | Semantic models named | agreed | E1 | not-yet-specified | remains to do |
+| [`dssc:M3.datamodel.02`](rules/L0/M3.datamodel.02.json) | PPDS data is self-descriptive and decoupled from applications | candidate | E1 | not-yet-specified | remains to do |
 | [`dssc:M3.delegation.01`](rules/L0/M3.delegation.01.json) | Delegation evidence distinct from identity | provisional | E2 | not-yet-specified | remains to do |
 | [`dssc:M3.federation.01`](rules/L0/M3.federation.01.json) | Data space self-description and identifier | example | E2 | not-yet-specified | remains to do |
 | [`dssc:M3.policy.01`](rules/L0/M3.policy.01.json) | Machine-readable usage conditions | example | E2 | not-yet-specified | remains to do |
+| [`dssc:M3.policy.02`](rules/L0/M3.policy.02.json) | Minimum policy concepts | provisional | E2 | not-yet-specified | remains to do |
 | [`dssc:M3.trust.02`](rules/L0/M3.trust.02.json) | Trust anchors and issuers | provisional | E1 | not-yet-specified | remains to do |
 | [`dssc:M4.assurance.01`](rules/L0/M4.assurance.01.json) | Assurance attribute on every rule | agreed | E1 | not-yet-specified | remains to do |
+| [`dssc:M4.evidence.01`](rules/L0/M4.evidence.01.json) | Evidence visibility | provisional | E1 | not-yet-specified | remains to do |
+| [`dssc:M4.exit.01`](rules/L0/M4.exit.01.json) | Portability and exit | example | E1 | none, not-yet-specified | partial |
 | [`dssc:M4.exit.02`](rules/L0/M4.exit.02.json) | Portability and exit at Level 0 | agreed | E1 | none, not-yet-specified | partial |
 | [`dssc:M4.incident.01`](rules/L0/M4.incident.01.json) | Incident and breach notification | example | E1 | none | checked by people |
 | [`dssc:M4.logging.01`](rules/L0/M4.logging.01.json) | Transaction record | example | E2 | not-yet-specified | remains to do |
+| [`dssc:M4.trust.03`](rules/L0/M4.trust.03.json) | Re-validation and revocation | provisional | E1 | none, not-yet-specified | partial |
+| [`dssc:M4.trust.04`](rules/L0/M4.trust.04.json) | Trust services and delegation | provisional | E1 | none | checked by people |
 | [`dssc:M5.trust.06`](rules/L0/M5.trust.06.json) | Machine-verifiable claims | provisional | E1 | none, not-yet-specified | partial |
 | [`ptx:rule/L0-AI-LITERACY`](rules/L0/L0-AI-LITERACY.json) | AI literacy of staff | candidate | E1 | none | checked by people |
 | [`ptx:rule/L0-CONTRACTED-EXCHANGE`](rules/L0/L0-CONTRACTED-EXCHANGE.json) | No exchange without a contract | candidate | E2 | not-yet-specified | remains to do |
@@ -41,7 +55,7 @@ Level 0 holds the rules common to all data spaces. Some are fixed, others are ge
 | [`ptx:rule/L0-RETENTION`](rules/L0/L0-RETENTION.json) | Retention and deletion | candidate | E2 | odrl-template | expressed |
 <!-- status:end -->
 
-Rules with a `dssc:` identifier come from the rule record register v0.1 of the DSSC Rulebook Accelerator (23 October 2026). They keep the DSSC identifier, the DSSC wording and its decision status: agreed, provisional, candidate, or example (kept by DSSC as an illustration, assessed by two data spaces). Rules with a `ptx:rule/` identifier are Prometheus-X candidates, not yet in the DSSC register.
+Rules with a `dssc:` identifier come from the rule record register v0.1 of the DSSC Rulebook Accelerator (23 October 2026). They keep the DSSC identifier, the DSSC wording and its decision status: agreed, provisional, candidate, or example (kept by DSSC as an illustration, assessed by two data spaces). The bank holds 35 of the 36 register records; the candidates come from a single data space and are not agreed as common rules. Rules with a `ptx:rule/` identifier are Prometheus-X candidates, not yet in the DSSC register.
 
 "Expressed" means the artifact exists in this repository. It does not mean a building block enforces it today: enforcement is tracked per data space in validation records, which come next.
 
@@ -115,8 +129,9 @@ python scripts/rulebank.py status --write
 - **Profile terms.** `dsif:sourceRule` and `dsif:enforcementClass` come from the DSIF ODRL profile plan and are not published yet.
 - **Release gate format.** To align with the Edge Node Server: gate identifiers, check expression format, what the gate log contains.
 - **Checks built into the connector.** `L0-CONTRACTED-EXCHANGE` is enforced by the PTX connector by design. We still have to decide how a record points to a built-in check.
-- **More Level 0 rules.** Not yet imported from the DSSC register: rules owned by a single data space and not yet discussed, records DSSC plans to merge (`M3.policy.02` into `M3.policy.01`, `M4.exit.01` into `M4.exit.02`, `M1.separation.01` and `.02`), and the provisional governance rows (intermediaries, contracts, standards, trust services, evidence visibility, claim recognition, re-validation).
-- **Overlaps with Prometheus-X rules.** `L0-RETENTION` and `L0-PURPOSE-LIMITATION` express parts of `dssc:M3.policy.01`. `L0-CONTRACTED-EXCHANGE` is close to `dssc:M4.logging.01`. To align when DSSC merges its policy records.
+- **Missing DSSC record.** `M1.participation.03` (CEADS identification and onboarding) has no text in the register yet.
+- **Records DSSC plans to merge.** `M3.policy.02` into `M3.policy.01`, `M4.exit.01` into `M4.exit.02`, `M1.separation.01` with `M1.separation.02`. Both versions are in the bank until DSSC merges them.
+- **Overlaps with Prometheus-X rules.** `L0-RETENTION` and `L0-PURPOSE-LIMITATION` express parts of `dssc:M3.policy.01` and `dssc:M3.policy.02`. `L0-CONTRACTED-EXCHANGE` is close to `dssc:M4.logging.01`. `dssc:M2.usage.01` (TEMS) covers the AI training prohibition of DS4Skills. To align when DSSC merges its policy records.
 
 ## Contributing
 
